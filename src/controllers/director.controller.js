@@ -11,7 +11,7 @@ const multer = require('multer');
 const fs = require('fs');
 const uuid = require('uuid/v4');
 const xlsx = require("xlsx");
-const chart = require('chart.js');
+
 
 //Sesión
 router.get('/login', (req, res) => {
