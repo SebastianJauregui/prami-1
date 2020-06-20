@@ -1,0 +1,68 @@
+{{>navegacionEmpresa}}
+
+<div class="container  pt-4 mt-4">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Datos del estudiante</h3>
+            </div>
+            <div class="card-text">
+                <div class="form-group">
+                    <img src="/uploads/{{estudiante.rutaImg}}" width="80px" height="80px"
+                            class="align-self-start mr-3" alt="...">
+                </div>
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                        value="{{estudiante.nombreUsuario}}{{estudiante.apellidoUsuario}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="codigo">Codigo UFPS</label>
+                    <input type="text" class="form-control" id="codigo" name="codigo"
+                        value="{{estudiante.pfkCodigoEstudiante}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="emailUfps">Correo UFPS</label>
+                    <input type="email" class="form-control" id="emailUfps" name="emailUfps"
+                        value="{{estudiante.correoUsuario}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo personal</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        value="{{estudiante.correoInstitucional}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono"
+                        value="{{estudiante.telefonoUsuario}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion"
+                        value="{{estudiante.direccionUsuario}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <input type="text" class="form-control" id="edad" name="edad" value="{{estudiante.edadEstudiante}}"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label for="semestre">Semestre que cursa</label>
+                    <input type="text" class="form-control" id="semestre" name="semestre"
+                        value="{{estudiante.semestreEstudiante}}" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripcion personalizada</label>
+                    <textarea disabled class="form-control" name="descripcion"
+                        id="descripcion">{{estudiante.descripcionPersonalizada}}</textarea>
+                </div>
+                <div class="form-group">
+                    <a href="/uploads/{{estudiante.rutaHojaVida}}"  target="_blank"><i class="far fa-file-alt"></i> Visualizar Hoja Vida</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,53 @@
+{{>navegacionDirector}}
+<style>
+  .card {
+    border-radius: 10px;
+    width: 300px;
+    height: 112px;
+    overflow: auto;
+  }
+
+  .locales {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+</style>
+
+
+<div class="container pt-4">
+  <h1> Convenios
+    <a class="btn btn-secondary align-middle" href="/director/convenio/crearConvenio" role="button"><i
+        class="material-icons align-middle">add</i>
+      Agregar Convenio</a>
+  </h1>
+
+  <h3 class="mt-2 pt-2">Convenios Creados</h3>
+  <div class="table-responsive-lg mt-2 pt-2">
+    <!--Para encerrar la tabla responsive-->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nombre Convenio</th>
+          <th scope="col">Descripcion Convenio</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {{#each rowsConvenio}}
+        <tr>
+          <th scope="row">{{nombreConvenio}}</th>
+          <td>{{descripcionConvenio}}</td>
+        </tr>
+        {{else}}
+        <tr>
+          <td>No hay convenios creados</td>
+        </tr>
+        {{/each}}
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

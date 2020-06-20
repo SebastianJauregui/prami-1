@@ -1,0 +1,75 @@
+{{>navegacionEmpresa}}
+
+<div class="container  pt-4 mt-4">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Editar perfil de la empresa</h3>
+            </div>
+            <form method="POST" action="/empresa/editarPerfil" class="mt-4" id="form" name="form">
+
+                    <div class="form-group">
+                        <label for="nit">NIT</label>
+                        <input type="text" class="form-control" id="nit" name="nit"
+                            value="{{empresa.nitEmpresa}}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                            value="{{empresa.nombreEmpresa}}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad"
+                            value="{{empresa.descripcionCiudad}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion"
+                            value="{{empresa.direccionUsuario}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="email" class="form-control" id="correo" name="correo"
+                            value="{{empresa.correoUsuario}}" >
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono"
+                            value="{{empresa.telefonoUsuario}}">
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Guardar</button>
+
+                </form>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Cambiar contraseña</h3>
+                
+            </div>
+            <div class="card-text">
+
+                <form action="/empresa/cambiarClave" method="POST">
+                    <div class="form-group">
+                        <label for="passwordA">Contraseña actual</label>
+                        <input type="password" class="form-control" id="passwordA" name="passwordA">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordN">Contraseña nueva</label>
+                        <input type="password" class="form-control" id="passwordN" name="passwordN">
+
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Cambiar
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

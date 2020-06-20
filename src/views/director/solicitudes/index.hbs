@@ -1,0 +1,37 @@
+{{>navegacionDirector}}
+
+<div class="container pt-4">
+
+    <h3>Solicitudes Registro Empresas</h3>
+    <div class="table-responsive-lg mt-3 pt-3">
+        <!--Para encerrar la tabla responsive-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nit Empresa</th>
+                    <th scope="col">Nombre Empresa</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Ver empresa</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each rowsRegistro}}
+                <tr>
+                    <th scope="row">{{nitEmpresa}}</th>
+                    <td>{{nombreEmpresa}}</td>
+                    <td>{{descripcionCiudad}}</td>
+                    <td><a href="/director/solicitudes/solicitud/{{pkIdEmpresa}}">Ver solicitud</a></td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td>No hay Solicitudes de Registro</td>
+                </tr>
+                {{/each}}
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

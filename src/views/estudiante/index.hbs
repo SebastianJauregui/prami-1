@@ -1,0 +1,105 @@
+{{>navegacionEstudiante}}
+
+<style>
+    .card {
+        border-radius: 10px;
+        overflow: auto;
+        width: 100%;
+    }
+
+    .grupito {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+
+<div class="container pt-4">
+    <h2 class="m-4"> Perfil estudiante
+    </h2>
+    <div class="grupito mb-5 pb-5">
+
+
+
+        <div class="card m-1 text-body">
+            <div class="card-body">
+                <div class="card-text">
+                    <div class="media">
+                        <img src="/uploads/{{estudiante.rutaImg}}" width="80px" height="80px"
+                            class="align-self-start mr-3" alt="...">
+                        <div class="media-body">
+                            <h5 class="mt-0">{{estudiante.nombreUsuario}} {{estudiante.apellidoUsuario}}</h5>
+                            <p>Edad: {{estudiante.edad}} <br>
+                                Semestre: {{estudiante.semestreEstudiante}}<br>
+                                Correo personal: {{estudiante.correoUsuario}}<br>
+                                Teléfono: {{estudiante.telefonoUsuario}}<br>
+                                Dirección: {{estudiante.direccionUsuario}}<br>
+                                <a href="/uploads/{{estudiante.rutaHojaVida}}" target="_blank"><i class="far fa-file-pdf"></i>Abrir hoja de vida</a>
+                            </p>
+
+                            <br>
+                            <p>
+                            <h5 class="mt-0">Descripción</h5>
+                            {{estudiante.descripcionPersonalizada}}
+                            </p>
+                            <a href="/estudiante/editarPerfil"><button class="btn btn-danger mt-3">Editar</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row col-md-12">
+            {{#each rowsEmpresa}}
+            <div class="card m-1 text-body">
+                <div class="card-body">
+                    <div class="card-text">
+                        <h5 class="mt-0">Mi contrato</h5>
+                        <h3>{{nombreEmpresa}}</h3>
+                        <p>Inicia en: {{fechaInicioPractica}} <br> Termina en: {{fechaFinPractica}} </p>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <a href="/estudiante/crearContrato"><button class="btn btn-danger mt-3 ml-2"><i
+                        class="material-icons align-middle">add</i> Crear contrato</button></a>
+            {{/each}}
+        </div>
+
+
+        <div class="row col-md-12">
+            <h3 class="m-4">Informes</h3>
+
+            <a href="/estudiante/informe/1"><button class="btn btn-outline-danger mt-4 ml-2"><i
+                        class="far fa-sticky-note"></i>
+                    Informe 1</button></a>
+            <a href="/estudiante/informe/2"><button class="btn btn-outline-danger mt-4 ml-2"><i
+                        class="far fa-sticky-note"></i>
+                    Informe 2</button></a>
+            <a href="/estudiante/informe/3"><button class="btn btn-outline-danger mt-4 ml-2"><i
+                        class="far fa-sticky-note"></i>
+                    Informe 3</button></a>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--fin container-->

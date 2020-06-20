@@ -1,0 +1,66 @@
+{{>navegacionCoordinador}}
+
+
+<style>
+    .card {
+        border-radius: 10px;
+        width: 300px;
+        height: 112px;
+        overflow: auto;
+    }
+
+    .locales {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+</style>
+
+
+<div class="container pt-4">
+    <h1>Coordinador
+    </h1>
+    <div class="locales mb-5 pb-5">
+
+    </div>
+
+    <h5>Listado de estudiantes</h5>
+    <div class="table-responsive-lg">
+        <!--Para encerrar la tabla responsive-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Informe 1</th>
+                    <th scope="col">Informe 2</th>
+                    <th scope="col">Informe 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each rowsEstudiantes}}
+                <tr>
+                    <th scope="row">{{pfkCodigoEstudiante}}</th>
+                    <td>{{nombreUsuario}}</td>
+                    <td>{{apellidoUsuario}}</td>
+                    <td><a role="button" class="btn btn-outline-success" href="/coordinador/informe/1-{{pkIdEstudianteGrupo}}"><i
+                                class="material-icons align-middle">picture_as_pdf
+                            </i></a> </td>
+                    <td><a role="button" class="btn btn-outline-success" href="/coordinador/informe/2-{{pkIdEstudianteGrupo}}"><i
+                                class="material-icons align-middle">picture_as_pdf
+                            </i></a></td>
+                    <td><a role="button" class="btn btn-outline-success" href="/coordinador/informe/3-{{pkIdEstudianteGrupo}}"><i
+                                class="material-icons align-middle">picture_as_pdf
+                            </i></a></td>
+                </tr>
+                {{else}}
+                No hay estudiantes en este grupo
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<!--fin container-->

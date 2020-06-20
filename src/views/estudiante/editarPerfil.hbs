@@ -1,0 +1,135 @@
+{{>navegacionEstudiante}}
+
+<div class="container  pt-4 mt-4">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Editar perfil del estudiante</h3>
+                <small>Estos datos serán vistos por las empresas</small>
+            </div>
+            <div class="card-text">
+
+                <form method="POST" action="/estudiante/editarPerfil" class="mt-4" id="form" name="form">
+
+
+
+                    <div class="form-group">
+                        <label for="email">Correo personal</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            value="{{usuario.correoUsuario}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono"
+                            value="{{usuario.telefonoUsuario}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion"
+                            value="{{usuario.direccionUsuario}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="semestre">Semestre que cursa (Ejemplo: 7)</label>
+                        <input type="text" class="form-control" id="semestre" name="semestre"
+                            value="{{usuario.semestreEstudiante}}">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion personalizada</label>
+                        <textarea class="form-control" name="descripcion" id="descripcion"
+                            form="form">{{usuario.descripcionPersonalizada}}</textarea>
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-secondary">Guardar</button>
+
+                </form>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Subir hoja de vida</h3>
+
+            </div>
+            <div class="card-text">
+                <form action="/estudiante/subirHojaVida" method="POST" enctype="multipart/form-data">
+                    <br>
+                    <div class="custom-file mt-3">
+                        <input type="file" class="custom-file-input" id="profilehojavida" name="profilehojavida"
+                            accept=".pdf">
+                        <label class="custom-file-label" for="profilehojavida" aria-describedby="informefile">Agregar
+                            archivo</label>
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Aceptar
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Subir foto de perfil</h3>
+
+            </div>
+            <div class="card-text">
+
+                <form action="/estudiante/subirFotoPerfil" method="POST" enctype="multipart/form-data">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="profileimg" name="profileimg"
+                            accept=".jpg,.jpeg,.png,.webp">
+                        <label class="custom-file-label" for="profileimg" aria-describedby="profileimg">Subir foto de
+                            perfil</label>
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Aceptar
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Cambiar contraseña</h3>
+
+            </div>
+            <div class="card-text">
+
+                <form action="/estudiante/cambiarClave" method="POST">
+                    <div class="form-group">
+                        <label for="passwordA">Contraseña actual</label>
+                        <input type="password" class="form-control" id="passwordA" name="passwordA">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordN">Contraseña nueva</label>
+                        <input type="password" class="form-control" id="passwordN" name="passwordN">
+
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Cambiar
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

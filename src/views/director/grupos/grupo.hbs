@@ -1,0 +1,86 @@
+{{>navegacionDirector}}
+<style>
+    .card {
+        border-radius: 10px;
+
+        overflow: auto;
+    }
+
+    .locales {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+</style>
+
+<div class="container pt-4">
+    <h1> {{nombreGrupo}}
+        <a class="btn btn-sm btn-danger align-middle" href="/director/grupos/grupo/eliminar/{{id}}" role="button"><i
+                class="material-icons align-middle">clear</i>
+            Eliminar Grupo</a>
+
+    </h1>
+    <div class="mb-2 pb-2">
+
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h5><i class="far fa-file-excel"></i> Pre-registrar estudiantes con un archivo Excel (.xlsx)</h5>
+                <small>Recuerde que su Excel debe tener una columna llamada "Código" y una columna llamada "Nombre" en la fila 1</small>
+            </div>
+            <div class="card-text">
+
+                <form action="/director/preregistro/{{id}}" method="POST" enctype="multipart/form-data">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="excelfile" name="excelfile" accept=".xlsx">
+                        <label class="custom-file-label" for="excelfile" aria-describedby="excelfile">Seleccionar
+                            archivo</label>
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Aceptar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive-lg mt-4 pt-5">
+        <!--Para encerrar la tabla responsive-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each rowsEstudiante}}
+                <tr>
+                    <th scope="row">{{pfkCodigoEstudiante}}</th>
+                    <td>{{nombreUsuario}}</td>
+                    <td>{{apellidoUsuario}}</td>
+                    <td>{{correoInstitucional}}</td>
+                    <td> <a class="btn btn-sm btn-secondary align-middle"
+                            href="/director/grupos/grupo/estudiante/{{pkIdUsuario}}" role="button"><i
+                                class="material-icons align-middle">face</i>
+                            Perfil</a>
+                    </td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td>No hay estudiantes registrados en este grupo</td>
+                </tr>
+                {{/each}}
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

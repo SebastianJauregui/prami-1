@@ -1,0 +1,84 @@
+{{>navegacionDirector}}
+<style>
+  .card {
+    border-radius: 10px;
+    width: 300px;
+    height: 112px;
+    overflow: auto;
+  }
+
+  .locales {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+</style>
+
+
+<div class="container pt-4">
+  <h1> Grupos
+    <a class="btn btn-secondary align-middle" href="/director/grupos/crearGrupo" role="button"><i
+        class="material-icons align-middle">add</i>
+      Nuevo grupo</a>
+  </h1>
+  <div class="locales mb-5 pb-5">
+
+    {{#each rowsGrupo}}
+    <a href="/director/grupos/grupo/{{pkIdGrupo}}">
+      <div class="card m-1 text-body">
+        <div class="card-body">
+          <div class="card-text">
+            <h4>{{nombreGrupo}}</h4>
+          </div>
+          <small>{{semestre}}</small>
+        </div>
+      </div>
+    </a>
+    {{else}}
+    <div class="card m-1 text-body">
+      <div class="card-body">
+        <div class="card-text">
+          <h4>No hay grupos creados</h4>
+        </div>
+      </div>
+    </div>
+
+    {{/each}}
+
+  </div>
+  <h3>Estudiantes pre-registrados</h3>
+  <div class="table-responsive-lg mt-4 pt-5">
+    <!--Para encerrar la tabla responsive-->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Grupo</th>
+          <th scope="col">Semestre</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+        {{#each rowsPreregistro}}
+        <tr>
+          <th scope="row">{{pkCodigoEstudiante}}</th>
+          <td>{{nombresEstudiante}}</td>
+          <td>{{apellidosEstudiante}}</td>
+          <td>{{nombreGrupo}}</td>
+          <td>{{semestre}}</td>
+        </tr>
+        {{else}}
+        <tr>
+          <td>No hay estudiantes pre-registrados en este semestre</td>
+        </tr>
+        {{/each}}
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

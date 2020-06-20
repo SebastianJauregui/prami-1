@@ -1,0 +1,50 @@
+{{>navegacionIndex}}
+<style>
+    .card {
+        border-radius: 10px;
+        width: 300px;
+        height: 112px;
+        overflow: auto;
+    }
+
+    .locales {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+</style>
+
+
+<div class="container pt-3">
+    <h1>Registrar Coordinador
+    </h1>
+    <div class="locales mb-3 pb-3">
+
+    </div>
+
+    <form action="/coordinador/registro" method="POST">
+        <div class="form-group">
+            <label for="codigo">Codigo Coordinador</label>
+            <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Codigo" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Institucional</label>
+            <input required type="email" class="form-control" id="email" name="email" placeholder="ejemplo@ufps.edu.co">
+        </div>
+        <div class="form-group">
+            <label for="personalEmail">Correo personal (Opcional)</label>
+            <input type="email" class="form-control" id="personalEmail" name="personalEmail" placeholder="ejemplo@hotmail.com">
+        </div>
+
+        
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Nueva contraseña">
+        </div>
+        
+ <button type="submit" class="btn btn-danger"><i class="material-icons align-middle">how_to_reg</i>
+                    Registrarse</button>
+    </form>
+
+</div>
+<!--fin container-->

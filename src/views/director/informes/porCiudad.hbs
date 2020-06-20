@@ -1,0 +1,46 @@
+{{>navegacionDirector}}
+
+<div class="container">
+
+    
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Informe de estudiantes realizando prácticas ordenados por ciudad</h3>
+            </div>
+            <div class="card-text">
+                
+                <div class="table-responsive-lg mt-2 pt-2">
+                    <!--Para encerrar la tabla responsive-->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Ciudad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each rowsEstudiantesEnPracticas}}
+                            <tr>
+                                <td>{{pfkCodigoEstudiante}}</td>
+                                <td>{{nombreUsuario}}</td>
+                                <td>{{descripcionCiudad}}</td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                                <td>No hay estudiantes registrados</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

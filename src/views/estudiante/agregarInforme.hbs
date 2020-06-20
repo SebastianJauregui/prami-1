@@ -1,0 +1,31 @@
+{{>navegacionEstudiante}}
+
+<div class="container  pt-4 mt-4">
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Agregar informe</h3>
+
+            </div>
+            <div class="card-text">
+
+                <form action="/estudiante/agregarInforme" method="POST" enctype="multipart/form-data">
+                    <small>Por favor asegurese que el nombre de su archivo PDF sea "Informe 1", "Informe 2", o "Informe 3" según sea el caso</small>
+                    <br>
+                    <div class="custom-file mt-3">
+                        <input type="file" class="custom-file-input" id="informefile" name="informefile" accept=".pdf">
+                        <label class="custom-file-label" for="informefile" aria-describedby="informefile">Agregar
+                            archivo</label>
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Aceptar
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

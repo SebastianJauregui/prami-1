@@ -1,0 +1,45 @@
+{{>navegacionEmpresa}}
+
+<style>
+    .card {
+        border-radius: 10px;
+        width: 300px;
+        height: 112px;
+        overflow: auto;
+    }
+
+    .locales {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+</style>
+
+
+<div class="container pt-4">
+    <h1>Inicio
+    </h1>
+    <div class="locales mb-5 pb-5">
+
+        <a href="/empresa/visualizar">
+            <div class="card m-1 text-body">
+                <div class="card-body">
+                    <div class="card-text">
+                        <h4 class="text-center">Estudiantes disponibles para realizar practicas</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="/empresa/editarPerfil">
+            <div class="card m-1 text-body">
+                <div class="card-body">
+                    <div class="card-text">
+                        <h4 class="text-center">Editar Informacion</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>

@@ -1,0 +1,50 @@
+{{>navegacionEstudiante}}
+
+<div class="container  pt-4 mt-4">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Crear Contrato</h3>
+            </div>
+            <div class="card-text">
+
+                <form method="POST" action="/estudiante/crearContrato" class="mt-4">
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <select name="empresa" id="empresa">
+                            {{#each rowsEmpresa}}
+                            <option value="{{pkIdEmpresa}}">{{nombreEmpresa}} <br>
+                                <small>(Nit:{{nitEmpresa}}-{{descripcionCiudad}})</small></option>
+                            {{/each}}
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codConvenio">Convenio</label>
+                        <select name="codConvenio" id="codConvenio">
+                            {{#each rowsConvenio}}
+                            <option value="{{pkIdConvenio}}">{{nombreConvenio}}</option>
+
+                            {{/each}}
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaInicio">Fecha Inicio Practicas</label>
+                        <input class="form-control" type="date" placeholder="" name="fechaInicio" id="fechaInicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFinalizacion">Fecha Finalizacion Practicas</label>
+                        <input class="form-control" type="date" placeholder="" name="fechaFinalizacion"
+                            id="fechaFinalizacion">
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Añadir Empresa</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

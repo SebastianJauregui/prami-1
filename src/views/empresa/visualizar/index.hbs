@@ -1,0 +1,67 @@
+{{>navegacionEmpresa}}
+<style>
+    .card {
+        border-radius: 10px;
+        width: 300px;
+        height: 112px;
+        overflow: auto;
+    }
+
+    .locales {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+</style>
+
+
+<div class="container ">
+    {{#each rowAceptado}}
+
+    <h3>Estudiantes Disponibles</h3>
+    <div class="table-responsive-lg mt-3 pt-3">
+        <!--Para encerrar la tabla responsive-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {{#each ../rowsEstudiantes}}
+                <tr>
+                    <th scope="row">{{pfkCodigoEstudiante}}</th>
+                    <td>{{nombreUsuario}}</td>
+                    <td>{{apellidoUsuario}}</td>
+                    <td>{{correoInstitucional}}</td>
+                    <td> <a class="btn btn-sm btn-secondary align-middle"
+                            href="/empresa/visualizar/estudiante/{{pkIdUsuario}}" role="button"><i
+                                class="material-icons align-middle">face</i>
+                            Perfil</a>
+                    </td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td>No hay estudiantes registrados</td>
+                </tr>
+                {{/each}}
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+
+    <h3>Solicitud de registro no ha sido aceptada aún</h3>
+    {{/each}}
+
+
+
+</div>

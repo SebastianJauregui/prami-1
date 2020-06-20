@@ -1,0 +1,65 @@
+{{>navegacionEstudiante}}
+<style>
+    #calificacion {
+        color: white;
+    }
+</style>
+
+<div class="container  pt-4 mt-4">
+    <h3>{{informe.nombreInforme}}</h3>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Agregar informe</h3>
+
+            </div>
+            <div class="card-text">
+
+                <form action="/estudiante/agregarInforme/{{id}}" method="POST" enctype="multipart/form-data">
+                    <br>
+                    <div class="custom-file mt-3">
+                        <input type="file" class="custom-file-input" id="informefile" name="informefile" accept=".pdf">
+                        <label class="custom-file-label" for="informefile" aria-describedby="informefile">Agregar
+                            archivo</label>
+                    </div>
+                    <button class="btn btn-secondary mt-3" type="submit">
+                        Aceptar
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card mt-4 p-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3></h3>
+            </div>
+            <div class="card-text">
+                {{#each rowInforme}}
+
+                <div class="row">
+                    <a href="/uploads/{{rutaInforme}}" target="_blank"><i class="far fa-file-pdf"></i> Abrir
+                        informe</a>
+                </div>
+                Calificación:<span class="badge badge-pill badge-primary calificacion">
+                        {{calificacion}}</span>
+                <br>
+                fecha subida: {{fechaSubida}} <br>
+
+                <div class="row mt-3">Comentarios del coordinador</div>
+                <div class="row">
+                    <textarea cols="10" style="width: 100%; margin:4px" disabled>{{comentarioCoordinador}}</textarea>
+                </div>
+                {{else}}
+                No has subido ningún informe
+
+                {{/each}}
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

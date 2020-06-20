@@ -1,0 +1,48 @@
+{{>navegacionDirector}}
+
+<div class="container pt-4">
+    {{#each rowsEmpresa}}
+    <h3>Empresa {{nombreEmpresa}}</h3>
+    <div class="locales mb-3 pb-3 mt-3 pt-3">
+
+        <div class="form-group">
+            <label for="nitEmpresa">NIT EMPRESA</label>
+            <input type="text" class="form-control" value="{{nitEmpresa}}" id="nitEmpresa" name="nitEmpresa" disabled>
+        </div>
+        <div class="form-group">
+            <label for="nameEmpresa">Nombre EMPRESA</label>
+            <input type="text" class="form-control" value="{{nombreEmpresa}}" id="nameEmpresa" name="nameEmpresa"
+                disabled>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Empresa</label>
+            <input class="form-control" type="email" value="{{correoUsuario}}" name="email" id="email" disabled>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="number" class="form-control" value="{{telefonoUsuario}}" id="telefono" name="telefono"
+                disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Direccion</label>
+            <input type="text" class="form-control" value="{{direccionUsuario}}" id="direccion" name="direccion"
+                disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" class="form-control" value="{{descripcionCiudad}}" id="ciudad" name="ciudad" disabled>
+        </div>
+        
+
+        <div class="d-flex flex-row justify-content-around">
+            <form action="/director/solicitudes/solicitud/acepto/{{pkIdEmpresa}}" method="POST">
+                <button type="submit" class="btn btn-danger">Aceptar</button>
+            </form>
+            <form action="/director/solicitudes/solicitud/rechazo/{{pkIdEmpresa}}" method="POST">
+                <button type="submit" class="btn btn-secondary">Rechazar</button>
+            </form>
+        </div>
+        {{/each}}
+    </div>

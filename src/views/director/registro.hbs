@@ -1,0 +1,49 @@
+
+{{>navegacionIndex}}
+
+<div class="container  pt-4 mt-4">
+  <div class="card mt-4">
+      <div class="card-body">
+          <div class="card-title font-weight-bold">
+              <h3>Registrar Director</h3>
+          </div>
+          <div class="card-text">
+
+              <form method="POST" action="/director/registro" class="mt-4">
+                  <div class="form-group">
+                      <label for="dni">Cédula</label>
+                      <input class="form-control" type="number" placeholder="" name="dni" id="dni">
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Crear contraseña</label>
+                      <input type="password" class="form-control" id="password" name="password">
+                  </div>
+                  <div class="form-group">
+                      <label for="nombres">Nombres</label>
+                      <input type="text" class="form-control" id="name" name="nombres">
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="apellidos">Apellidos</label>
+                      <input type="text" class="form-control" id="apellidos" name="apellidos">
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" name="email">
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="codigoDirector">Código Director</label>
+                      <input type="text" class="form-control" id="codigoDirector" name="codigoDirector">
+                      
+                  </div>
+                  <button type="submit" class="btn btn-secondary">Registrar</button>
+                  
+              </form>
+              
+
+          </div>
+      </div>
+  </div>
+</div>

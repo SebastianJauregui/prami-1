@@ -1,0 +1,39 @@
+{{>navegacionCoordinador}}
+
+
+
+<style>
+    .card {
+        border-radius: 10px;
+        width: 300px;
+        height: 112px;
+        overflow: auto;
+    }
+
+    .locales {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+</style>
+
+
+<div class="container pt-4">
+    <h1>Coordinador
+    </h1>
+    <div class="locales mb-5 pb-5">
+
+    </div>
+
+    <a href="/coordinador/listadoEstudiantes">
+        <div class="card m-1 text-body">
+            <div class="card-body">
+                <div class="card-text">
+                    <h4>{{nombreGrupo}}</h4>
+                </div>
+            </div>
+        </div>
+    </a>
+
+</div>
+<!--fin container-->

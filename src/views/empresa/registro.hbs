@@ -1,0 +1,56 @@
+{{>navegacionIndex}}
+
+<div class="container  pt-4 mt-4">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="card-title font-weight-bold">
+                <h3>Registrar Empresa</h3>
+            </div>
+            <div class="card-text">
+
+                <form method="POST" action="/empresa/registro" class="mt-4">
+                    <div class="form-group">
+                        <label for="nitEmpresa">NIT EMPRESA</label>
+                        <input type="text" class="form-control" id="nitEmpresa" name="nitEmpresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameEmpresa">Nombre EMPRESA</label>
+                        <input type="text" class="form-control" id="nameEmpresa" name="nameEmpresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Empresa</label>
+                        <input class="form-control" type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <select class="form-control" name="ciudad" id="ciudad" required>
+                            {{#each rowsCiudad}}
+                            <option value="{{pkIdCiudad}}">{{descripcionCiudad}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Crear contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Registrar</button>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
